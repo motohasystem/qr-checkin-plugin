@@ -1,0 +1,60 @@
+{
+  "manifest_version": 1,
+  "version": 1,
+  "type": "APP",
+  "name": {
+    "en": "QRCheckinPlugin",
+    "ja": "QRチェックイン"
+  },
+  "icon": "image/icon_qr.png",
+  "description": {
+    "en": "It is the plugin for checkin activities service.",
+    "ja": "カメラにかざしたQRコードを読み取り、日時とともに指定したフィールドに記録します。"
+  },
+  "homepage_url": {
+    "ja": "https://www.monosus.co.jp/",
+    "en": "https://www.monosus.co.jp/",
+    "zh": "https://www.monosus.co.jp/"
+  },
+  "desktop": {
+    "js": [
+      "https://js.cybozu.com/jquery/3.3.1/jquery.min.js",
+      "https://cdn.jsdelivr.net/npm/micromodal/dist/micromodal.min.js",
+      "https://js.cybozu.com/luxon/2.3.0/luxon.min.js",
+      "js/desktop.js"
+    ],
+    "css": [
+      "css/51-modern-default.css",
+      "css/micromodal-outside.css",
+      "css/desktop.css"
+    ]
+  },
+  "config": {
+    "html": "html/config.html",
+    "js": [
+      "https://js.cybozu.com/jquery/3.3.1/jquery.min.js",
+      "js/config.js"
+    ],
+    "css": [
+      "css/51-modern-default.css",
+      "css/config.css"
+    ],
+    "required_params": [
+        "fc_datetime_checkin",
+        "fc_datetime_checkout",
+        "label_datetime_checkin",
+        "label_datetime_checkout",
+        "fc_lookup_memberid",
+        "number_guard_millisecond"
+    ]
+  },
+  "mobile": {
+    "js": [
+      "https://js.cybozu.com/jquery/3.3.1/jquery.min.js",
+      "js/mobile.js"
+    ],
+    "css": [
+      "css/mobile.css"
+    ]
+  }
+}

@@ -1,0 +1,142 @@
+<section class="settings">
+    <h2 class="settings-heading">QRチェックインプラグインの設定</h2>
+    <p class="kintoneplugin-desc">QRコード読み取りチェックインを可能にするプラグインです。</p>
+    <form id='form_settings' class="js-submit-settings">
+
+        <div class="block">
+            <label class="kintoneplugin-label">
+                <span id="container_label">タイトル</span>
+            </label>
+            <div class="kintoneplugin-row">
+                <p>呼び出しボタンのラベルおよび全画面表示で表示する見出しを設定してください。</p>
+                <label for="title_dialog">
+                    <input type="text" id="title_dialog" value=""
+                        class="js-text-message kintoneplugin-input-text">
+                </label>
+            </div>
+        </div>
+
+        <div class="block">
+            <label class="kintoneplugin-label">
+                <span id="container_label">チェックインフィールド</span>
+                <span class="kintoneplugin-require">*</span>
+            </label>
+            <div class="kintoneplugin-row">
+                <p>チェックイン時刻を記録する日時フィールドを選択して下さい。</p>
+                <div class="kintoneplugin-select-outer">
+                    <div class="kintoneplugin-select">
+                        <select name="label_datetime_checkin" id="label_datetime_checkin"></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="block">
+            <label class="kintoneplugin-label">
+                <span id="container_label">チェックアウトフィールド</span>
+                <span class="kintoneplugin-require">*</span>
+            </label>
+            <div class="kintoneplugin-row">
+                <p>チェックアウト時刻を記録する日時フィールドを選択して下さい。</p>
+                <div class="kintoneplugin-select-outer">
+                    <div class="kintoneplugin-select">
+                        <select name="label_datetime_checkout" id="label_datetime_checkout"></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="block">
+            <label class="kintoneplugin-label">
+                <span id="container_label">メンバーIDフィールド</span>
+                <span class="kintoneplugin-require">*</span>
+            </label>
+            <div class="kintoneplugin-row">
+                <p>メンバーIDを入力するルックアップフィールドを選択して下さい。</p>
+                <div class="kintoneplugin-select-outer">
+                    <div class="kintoneplugin-select">
+                        <select name="label_lookup_memberid" id="label_lookup_memberid"></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="block">
+            <label class="kintoneplugin-label">
+                <span id="container_label">チェックスタイル</span>
+                <span class="kintoneplugin-require">*</span>
+            </label>
+            <div class="kintoneplugin-row">
+                <p>双方向チェックを選ぶと、チェックインの次はチェックアウトが必須です。
+                このとき、<strong>チェックアウトフィールドの指定も必須</strong>となります。</p>
+                <p>一方向チェックでは、チェックアウトすることなくチェックインだけを連続して記録できます。</p>
+                <p>用途に応じて使い分けてください。</p>
+                <div id="div_radio_checkinstyle" class="kintoneplugin-input-radio">
+                    <span class="kintoneplugin-input-radio-item">
+                        <input type="radio" id="transaction" name="radio_checkinstyle" value="transaction" checked />
+                        <label for="transaction">双方向チェック</label>
+                    </span>
+                    <span class="kintoneplugin-input-radio-item">
+                        <input type="radio" id="swarm" name="radio_checkinstyle" value="swarm" />
+                        <label for="swarm">一方向チェック</label>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="block">
+            <label class="kintoneplugin-label">
+                <span id="container_label">閉じる挙動のカスタマイズ</span>
+            </label>
+            <div class="kintoneplugin-row">
+                <p>ダイアログを閉じる挙動について設定します。ボタンで閉じる、マウスのダブルクリックで閉じる、3本指のマルチタップで閉じる(iPad等)を設定できます。</p>
+                <p>iPadで閉じるボタンを無効にする際はマルチタップで閉じる操作がオススメです。</p>
+
+                <div class="kintoneplugin-input-checkbox">
+                    <span class="kintoneplugin-input-checkbox-item">
+                      <input type="checkbox" name="checkbox" value="0" id="checkbox-show-button-close" checked="">
+                      <label for="checkbox-show-button-close">ボタンで閉じる</label>
+                    </span>
+                </div>
+                
+                <div class="kintoneplugin-input-checkbox">
+                    <span class="kintoneplugin-input-checkbox-item">
+                      <input type="checkbox" name="checkbox" value="1" id="checkbox-close-on-unfocus" checked="">
+                      <label for="checkbox-close-on-unfocus">画面のダブルクリックで閉じる</label>
+                    </span>
+                </div>
+
+                <div class="kintoneplugin-input-checkbox">
+                    <span class="kintoneplugin-input-checkbox-item">
+                      <input type="checkbox" name="checkbox" value="1" id="checkbox-close-on-multi-tap" checked="">
+                      <label for="checkbox-close-on-multi-tap">3本指のマルチタップで閉じる(iOS)</label>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="block">
+            <label class="kintoneplugin-label">
+                <span id="container_label">ガードレール: 多重チェックイン回避</span>
+                <span class="kintoneplugin-require">*</span>
+            </label>
+            <div class="kintoneplugin-row">
+                <p>一方向チェック: 指定秒数（ミリ秒）の間、同一IDの連続チェックインを回避します。</p>
+                <label for="number_guard_millisecond">
+                    <input type="text" id="number_guard_millisecond" value="1000"
+                        class="js-text-message kintoneplugin-input-text" required>
+                </label>
+            </div>
+        </div>
+
+        <p id="msg_submitarea" class="kintoneplugin-row">
+        </p>
+        <p class="kintoneplugin-row">
+            <button type="button" class="js-cancel-button kintoneplugin-button-dialog-cancel">キャンセル</button>
+            <button id="btn_apply" class="kintoneplugin-button-dialog-ok">適用</button>
+        </p>
+    </form>
+
+
+</section>
