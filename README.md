@@ -6,7 +6,7 @@ iPadをQRチェックイン/チェックアウト端末化するkintoneプラグ
 
 主に[コーダー道場神山](https://coderdojo.kamiyama.club)の入退室管理に使う目的で開発しました。
 
-https://user-images.githubusercontent.com/2771525/171765613-a050e00b-65c2-4828-99d4-7bf933df14b5.mp4
+https://user-images.githubusercontent.com/2771525/171769801-f687da20-e224-4f3c-845c-6f0e6064dac9.mp4
 
 ## インストール
 
