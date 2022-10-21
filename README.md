@@ -10,7 +10,7 @@ https://user-images.githubusercontent.com/2771525/171769801-f687da20-e224-4f3c-8
 
 ## インストール
 
-お使いのkintone環境にプラグインとしてインストールしてください。
+お使いのkintone環境にプラグインとしてインストールしてください。zipファイルは[distディレクトリ](https://github.com/motohasystem/qr-checkin-plugin/tree/main/dist)からダウンロードできます。
 
 ## プラグイン設定の3ステップ
 
